@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       maxWidth: {
-        'container': '1602px',
+        'container': '1604px',
       },
       fontFamily: {
         'dm': ['DM Sans']
@@ -16,12 +16,17 @@ export default {
         secondary:'#767676',
         primary:'#262626',
         third:'#6D6D6D',
-        four:'#F5F5F5',
+        four:'#F5F5F3',
         five:'#979797',
+        six:'#D8D8D8',
       },
       fontSize: {
         text39: '39px',
+        text49: '49px',
         
+      },  
+      spacing: {
+        '644': '644px',
       }
     },
   },

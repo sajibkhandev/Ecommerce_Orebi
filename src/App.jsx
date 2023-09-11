@@ -19,6 +19,66 @@ import "slick-carousel/slick/slick.css";
 import PrevArrows from './components/PrevArrows'
 import NextArrows from './components/NextArrows'
 
+import {
+  createRoutesFromElements,
+  createBrowserRouter,
+  Route,
+  RouterProvider
+} from "react-router-dom";
+
+import RootLayouts from './components/RootLayouts'
+import Badge from './components/Badge'
+import ErrorPage from './pages/ErrorPage'
+import HomePage from './pages/HomePage'
+import SignupPage from './pages/SignupPage'
+import CheckoutPage from './pages/CheckoutPage'
+import LoginPage from './pages/LoginPage'
+import ContactsPage from './pages/ContactsPage'
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+   <>
+    <Route
+      path="/"
+      element={<RootLayouts />}>
+         <Route
+             path="/"
+             element={<HomePage />}
+         ></Route>
+
+          <Route
+             path="/shop"
+             element={<Product />}
+         ></Route>
+          <Route
+             path="/sign-up"
+             element={<SignupPage />}
+         ></Route>
+
+         <Route
+             path="/contacts"
+             element={<ContactsPage />}
+         ></Route>
+         <Route
+             path="/login"
+             element={<LoginPage />}
+         ></Route>
+         <Route
+             path="/checkout"
+             element={<CheckoutPage />}
+         ></Route>
+         <Route
+             path="*"
+             element={<ErrorPage />}
+         ></Route>
+        
+
+    </Route>
+   
+   </>
+  )
+);
+
 export default function App() {
 
   const settings = {
@@ -31,6 +91,26 @@ export default function App() {
   };
   return (
    <>
+   <RouterProvider router={router} />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    {/* <List text="Home"/>
    <List text="Shop"/>
    <List text="About"/>
