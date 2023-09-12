@@ -9,6 +9,10 @@ export default {
       maxWidth: {
         'container': '1604px',
       },
+      width:{
+        506:"506px"
+
+      },
       fontFamily: {
         'dm': ['DM Sans']
       },
@@ -23,6 +27,7 @@ export default {
       fontSize: {
         text39: '39px',
         text49: '49px',
+        text25: '25px',
         
       },  
       spacing: {
