@@ -3,11 +3,13 @@ import { createSlice } from '@reduxjs/toolkit'
 export const breadCrumbs = createSlice({
   name: 'breadCrumbs',
   initialState: {
-    name: "",
+    currentName: "",
+    previousName: "",
   },
   reducers: {
     pages: (state,actions) => {
-        state.name=actions.payload
+      state.previousName=state.currentName
+      state.currentName=actions.payload
         
     }
   },

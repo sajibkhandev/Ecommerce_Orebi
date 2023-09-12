@@ -9,15 +9,17 @@ import Input2 from '../components/Input2'
 import Button from '../components/Button'
 import Image from '../components/Image'
 import location from '../assets/location.png'
+import { useSelector } from 'react-redux'
 
 export default function ContactsPage() {
+     let data=useSelector((state)=>state.breadcrumb.previousName)
   return (
     <Section className='pb-36 pt-32'>
         <Container>
         <SubHeading text="Contacts" className='text-text49'/>
              <Flex className='items-center gap-x-1'>
               <p className=' text-xs text-third font-normal font-dm cursor-pointer'>
-               <Link to='/'>Home</Link></p>  
+              <Link to={data=="Home"?'/':`/${data}`}>{data}</Link></p>  
               <FaAngleRight className=' text-xs text-third font-normal font-dm'/> 
              <p className='first-letter:uppercase text-xs text-third font-normal font-dm cursor-pointer'>{window.location.pathname.replace("/","")}</p>
 

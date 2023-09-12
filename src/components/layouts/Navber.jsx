@@ -27,11 +27,15 @@ export default function Navber() {
                         <Link onClick={()=>handlebreadcrumbs("Home")} to='/'>
                             <List text="Home"/>
                         </Link>
-                        <Link onClick={()=>handlebreadcrumbs("Shop")} to='/shop'>
+                        <Link onClick={()=>handlebreadcrumbs("Products")} to='/products'>
                              <List text="Shop"/>
                         </Link>
-                        <List text="About"/>
-                        <List text="Contacts"/>
+                        <Link onClick={()=>handlebreadcrumbs("About")} to='/about'>
+                            <List text="About"/>
+                        </Link>
+                       <Link onClick={()=>handlebreadcrumbs("Contacts")} to='/contacts'>
+                       <List text="Contacts"/>
+                       </Link>
                         <List text="Journal"/>
                     </ul>
                 </Flex>

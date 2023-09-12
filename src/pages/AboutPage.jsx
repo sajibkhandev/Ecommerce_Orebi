@@ -11,14 +11,17 @@ import { FaAngleRight } from 'react-icons/fa'
 import Product from '../components/Product'
 import product1 from '../assets/product1.png'
 import product13 from '../assets/product13.png'
+import { useSelector } from 'react-redux'
 export default function AboutPage() {
+    let data=useSelector((state)=>(state.breadcrumb.previousName))
+
   return (
     <Section className='py-32'>
         <Container>
             <SubHeading text='About' className='text-text49'/>
             <Flex className='items-center gap-x-1'>
              <p className=' text-xs text-third font-normal font-dm cursor-pointer'>
-              <Link to='/'>Home</Link></p>  
+             <Link to={data=="Home"?'/':`/${data}`}>{data}</Link></p>  
              <FaAngleRight className=' text-xs text-third font-normal font-dm'/> 
             <p className='first-letter:uppercase text-xs text-third font-normal font-dm cursor-pointer'>{window.location.pathname.replace("/","")}</p>
             </Flex >

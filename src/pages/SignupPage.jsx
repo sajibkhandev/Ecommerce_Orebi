@@ -10,14 +10,14 @@ import { Link } from 'react-router-dom'
 import Button from '../components/Button'
 
 export default function SignupPage() {
-    let data=useSelector((state)=>state.breadcrumb.name)
+    let data=useSelector((state)=>(state.breadcrumb.currentName))
   return (
     <Section className='py-32'>
         <Container>
             <SubHeading text='Sign up' className='text-text49'/>
             <Flex className='items-center gap-x-1'>
              <p className=' text-xs text-third font-normal font-dm cursor-pointer'>
-              <Link to={data=="Home"?'/':`/${data.toLowerCase()}`}>{data}</Link>  </p>  
+              <Link to={data=="Home"?'/':`/${data}`}>{data}</Link>  </p>  
              <FaAngleRight className=' text-xs text-third font-normal font-dm'/> 
             <p className='first-letter:uppercase text-xs text-third font-normal font-dm cursor-pointer'>{window.location.pathname.replace("/","").replace("-"," ")}</p>
 
