@@ -8,9 +8,24 @@ import Flex from './Flex'
 import { AiFillHeart } from 'react-icons/ai';
 import { HiOutlineRefresh } from 'react-icons/hi';
 import { BsFillCartDashFill } from 'react-icons/bs';
+import { useDispatch } from 'react-redux'
+import { addCart } from '../slices/addToCart'
 
 
-export default function Product({src}) {
+
+export default function Product({src,heading}) {
+  let dispatch=useDispatch()
+  let handleClick=()=>{
+    dispatch(addCart({
+      title:heading,
+      price:44,
+      image:"nai",
+      quantity:1
+
+    }))
+  }
+ 
+  
   return (
     <div className='mx-2.5'>
         <div className='relative overflow-hidden group'>
@@ -25,14 +40,16 @@ export default function Product({src}) {
             <p className='text-base text-secondary font-base font-normal hover:text-primary hover:font-bold duration-300 cursor-pointer'>Compare</p>
             <HiOutlineRefresh/>
             </Flex>
-            <Flex className='justify-end items-center gap-x-4'>
+            
+            <div onClick={handleClick} className='flex justify-end items-center gap-x-4'>
             <p className='text-base text-secondary font-base font-normal hover:text-primary hover:font-bold duration-300 cursor-pointer'>Add to Cart</p>
             <BsFillCartDashFill/>
-            </Flex>
+            </div>
+           
         </div>
         </div>
         <Flex className='justify-between items-center pt-6'>
-            <ProtionHeading text='Basic Crew Neck Tee'/>
+            <ProtionHeading text={heading}/>
             <p className='text-secondary text-base font-dm font-normal'>$44.00</p>
         </Flex>
     </div>

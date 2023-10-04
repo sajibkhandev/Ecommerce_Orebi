@@ -41,17 +41,17 @@ export default function HomePage() {
   };
   return (
     <Section>
-      <Image src={banner}/>
+      {/* <Image src={banner}/> */}
       <Container>
-      <div className='border-b border-solid border-six py-5 '>
+      {/* <div className='border-b border-solid border-six py-5 '>
         <Flex className='justify-between'>
         <Facillity/>
         <Facillity/>
         <Facillity/>
         </Flex>
 
-      </div>
-      <Link>
+      </div> */}
+      {/* <Link>
          <Image src={add} alt="add" className='pt-28 pb-32'/>
       </Link>
       <SubHeading text="New Arrivals" className='pb-12'/>
@@ -95,16 +95,16 @@ export default function HomePage() {
           </div>
         </Slider>
 
-      </div> 
+      </div>  */}
       <SubHeading text='Our Bestsellers' className='pb-12'/>
       <Flex className='justify-between'>
-      <Product src={product5}/>
-      <Product src={product6}/>
-      <Product src={product7}/>
-      <Product src={product8}/>
+      <Product heading='Product1' src={product5}/>
+      <Product heading='Product2' src={product6}/>
+      <Product heading='Product3' src={product7}/>
+      <Product heading='Product4' src={product8}/>
         
       </Flex>
-      <Link to='/'>
+      {/* <Link to='/'>
           <Image src={add2} className='py-32'/>
       </Link>
       <SubHeading text='Special Offers' className='pb-12'/>
@@ -114,7 +114,7 @@ export default function HomePage() {
       <Product src={product11}/>
       <Product src={product12}/>
         
-      </Flex>
+      </Flex> */}
 
       </Container>
       

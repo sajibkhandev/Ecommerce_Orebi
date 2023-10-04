@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import Section from '../Section'
 import Container from '../Container'
 import Flex from '../Flex'
@@ -10,13 +10,16 @@ import ButtomAngle from '../icons/ButtomAngle'
 import Cart from '../icons/Cart'
 import { Link } from 'react-router-dom'
 import List from '../List'
+import { useSelector } from 'react-redux'
 
 export default function SearchBer() {
+  let [open,setOpen]=useState(false)
+  let cartData=useSelector((state)=>(state.cartItem.cart))
+
   let handlebreadcrumbs=(name)=>{
     console.log(name);
     
   }
- 
   return (
     <>
     <Section  className='bg-four py-10'>
@@ -46,9 +49,20 @@ export default function SearchBer() {
                     </Link>
                       <ButtomAngle/>
                   </Flex>
-                  <Cart/>
+                  <div onClick={()=>setOpen(true)}><Cart /></div>{cartData.length}
                 </Flex>
             </Flex>
+            
+            {open &&
+             <div className='bg-red-500 h-screen w-2/6 absolute top-0 right-0 z-10'>
+              <div onClick={()=>setOpen(false)}><Cart />
+              <ul>
+                {cartData.map(item=>(
+                  <li>{item.title} - {item.quantity}</li>
+                ))}
+              </ul>
+              </div>
+              </div>}
         </Container>
     </Section>
     </>
