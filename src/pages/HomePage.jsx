@@ -41,80 +41,80 @@ export default function HomePage() {
   };
   return (
     <Section>
-      {/* <Image src={banner}/> */}
+      <Image src={banner}/>
       <Container>
-      {/* <div className='border-b border-solid border-six py-5 '>
+      <div className='border-b border-solid border-six py-5 '>
         <Flex className='justify-between'>
         <Facillity/>
         <Facillity/>
         <Facillity/>
         </Flex>
 
-      </div> */}
-      {/* <Link>
+      </div>
+      <Link>
          <Image src={add} alt="add" className='pt-28 pb-32'/>
       </Link>
       <SubHeading text="New Arrivals" className='pb-12'/>
       <div className='relative pb-28'>
       <Slider {...settings}>
           <div>
-          <Product src={product1}/>
+          <Product heading='Product1' src={product1}/>
           </div>
           <div>
-          <Product src={product2}/>
+          <Product heading='Product2' src={product2}/>
           </div>
           <div>
-          <Product src={product3}/>
+          <Product heading='Product3' src={product3}/>
           </div>
           <div>
-          <Product src={product4}/>
+          <Product heading='Product4' src={product4}/>
           </div>
           <div>
-          <Product src={product5}/>
+          <Product heading='Product5' src={product5}/>
           </div>
           <div>
-          <Product src={product6}/>
+          <Product heading='Product6' src={product6}/>
           </div>
           <div>
-          <Product src={product7}/>
+          <Product heading='Product7' src={product7}/>
           </div>
           <div>
-          <Product src={product8}/>
+          <Product heading='Product8' src={product8}/>
           </div>
           <div>
-          <Product src={product9}/>
+          <Product heading='Product9' src={product9}/>
           </div>
           <div>
-          <Product src={product10}/>
+          <Product heading='Product10' src={product10}/>
           </div>
           <div>
-          <Product src={product11}/>
+          <Product heading='Product11' src={product11}/>
           </div>
           <div>
-          <Product src={product12}/>
+          <Product heading='Product12' src={product12}/>
           </div>
         </Slider>
 
-      </div>  */}
+      </div> 
       <SubHeading text='Our Bestsellers' className='pb-12'/>
       <Flex className='justify-between'>
-      <Product heading='Product1' src={product5}/>
-      <Product heading='Product2' src={product6}/>
-      <Product heading='Product3' src={product7}/>
-      <Product heading='Product4' src={product8}/>
+      <Product heading='Product5' src={product5}/>
+      <Product heading='Product6' src={product6}/>
+      <Product heading='Product7' src={product7}/>
+      <Product heading='Product8' src={product8}/>
         
       </Flex>
-      {/* <Link to='/'>
+      <Link to='/'>
           <Image src={add2} className='py-32'/>
       </Link>
       <SubHeading text='Special Offers' className='pb-12'/>
       <Flex className='justify-between pb-28'>
-      <Product src={product9}/>
-      <Product src={product10}/>
-      <Product src={product11}/>
-      <Product src={product12}/>
+      <Product heading='Product9' src={product9}/>
+      <Product heading='Product10' src={product10}/>
+      <Product heading='Product11' src={product11}/>
+      <Product heading='Product12' src={product12}/>
         
-      </Flex> */}
+      </Flex>
 
       </Container>
       

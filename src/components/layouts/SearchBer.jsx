@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Section from '../Section'
 import Container from '../Container'
 import Flex from '../Flex'
@@ -10,16 +10,43 @@ import ButtomAngle from '../icons/ButtomAngle'
 import Cart from '../icons/Cart'
 import { Link } from 'react-router-dom'
 import List from '../List'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { increment,decrement,remoneButton} from '../../slices/addToCart'
+import {AiOutlineClose} from 'react-icons/ai'
 
 export default function SearchBer() {
   let [open,setOpen]=useState(false)
+  let [total,setTotal]=useState(0)
   let cartData=useSelector((state)=>(state.cartItem.cart))
+  let sajib=useSelector((state)=>(state.cartItem.cartOpen))
+  
+  
+  let dispatch=useDispatch()
 
   let handlebreadcrumbs=(name)=>{
     console.log(name);
     
   }
+  let handleIncrement=(item)=>{
+    dispatch(increment(item))
+    
+  }
+  let handleDecrement=(item)=>{
+    dispatch(decrement(item))
+   
+    
+  }
+  let handleRemove=(item)=>{
+    dispatch(remoneButton(item))
+  }
+  useEffect(()=>{
+    let total=0
+    cartData.map(item=>{
+      total+=item.price*item.quantity
+    })
+    setTotal(total)
+    setOpen(sajib)
+  },[cartData])
   return (
     <>
     <Section  className='bg-four py-10'>
@@ -54,14 +81,27 @@ export default function SearchBer() {
             </Flex>
             
             {open &&
-             <div className='bg-red-500 h-screen w-2/6 absolute top-0 right-0 z-10'>
-              <div onClick={()=>setOpen(false)}><Cart />
-              <ul>
-                {cartData.map(item=>(
-                  <li>{item.title} - {item.quantity}</li>
-                ))}
+             <div className='bg-primary text-white h-screen w-2/6 absolute top-0 right-0 z-10'>
+              <div onClick={()=>setOpen(false)}><button className=' m-2 p-2 bg-black text-white border-white border border-solid text-white' onClick={()=>handleRemove(item)}><AiOutlineClose className='text-xl'/></button></div>
+              <ul className='flex justify-between pt-7 px-2 py-5 text-lg font-semibold text-center'>
+                <li>Action:</li>
+                <li>Product:</li>
+                <li>Price:</li>
+                <li>Quantity:</li>
+                <li>Subtotal:</li>
               </ul>
-              </div>
+              {cartData.length>0?cartData.map(item=>(
+              <ul className='flex justify-between px-2 text-base font-medium py-5 border-b border-solid border-white'>
+                  <li><button className='p-2 bg-black text-white border-white border border-solid text-white' onClick={()=>handleRemove(item)}><AiOutlineClose className='text-xl'/></button></li>
+                  <li>{item.title} </li>
+                  <li>{item.price}</li>
+                  <li className='border border-solid border-white px-4 py-1'><button onClick={()=>handleDecrement(item)} className='mr-2 text-xl'>-</button >{item.quantity}<button onClick={()=>handleIncrement(item)} className='ml-2 text-lg'>+</button></li>
+                  <li>{item.price*item.quantity}$</li>
+              </ul>
+                )):<h2 className='text-4xl font-medium h-full flex justify-center my-[300px]'>Cart is Empty</h2>}
+                <h2 className='absolute bottom-0 right-0 p-5 text-3xl'>Total: {total}.00$</h2>
+                
+              
               </div>}
         </Container>
     </Section>

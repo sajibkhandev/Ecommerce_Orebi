@@ -9,7 +9,8 @@ import { AiFillHeart } from 'react-icons/ai';
 import { HiOutlineRefresh } from 'react-icons/hi';
 import { BsFillCartDashFill } from 'react-icons/bs';
 import { useDispatch } from 'react-redux'
-import { addCart } from '../slices/addToCart'
+import { addCart, cartOpen } from '../slices/addToCart'
+
 
 
 
@@ -23,6 +24,7 @@ export default function Product({src,heading}) {
       quantity:1
 
     }))
+    dispatch(cartOpen(true))
   }
  
   
@@ -41,7 +43,7 @@ export default function Product({src,heading}) {
             <HiOutlineRefresh/>
             </Flex>
             
-            <div onClick={handleClick} className='flex justify-end items-center gap-x-4'>
+            <div onClick={()=>handleClick(true)} className='flex justify-end items-center gap-x-4'>
             <p className='text-base text-secondary font-base font-normal hover:text-primary hover:font-bold duration-300 cursor-pointer'>Add to Cart</p>
             <BsFillCartDashFill/>
             </div>
