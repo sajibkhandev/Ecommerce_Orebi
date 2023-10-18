@@ -10,7 +10,8 @@ export default {
         'container': '1604px',
       },
       width:{
-        506:"506px"
+        506:"506px",
+        780:"780px"
 
       },
       fontFamily: {

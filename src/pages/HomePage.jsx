@@ -1,11 +1,13 @@
 import React from 'react'
 
 import Section from '../components/Section'
-import Image from '../components/Image'
 import Container from '../components/Container'
-import Flex from '../components/Flex'
 import banner from '../assets/banner.png'
+import Image from '../components/Image'
+import Flex from '../components/Flex'
+import Facility from '../components/Facility'
 import SubHeading from '../components/SubHeading'
+import { Link } from 'react-router-dom'
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
@@ -29,8 +31,7 @@ import product9 from '../assets/product9.png'
 import product10 from '../assets/product10.png'
 import product11 from '../assets/product11.png'
 import product12 from '../assets/product12.png'
-import { Link } from 'react-router-dom'
-import Facility from '../components/Facility'
+
 
 
 export default function HomePage() {
@@ -53,15 +54,8 @@ export default function HomePage() {
     autoplay: true,
     speed: 1000,
     
-    appendDots: dots => (
-      <div >
-        <ul style={{ margin: "0px", }}> {dots} </ul>
-      </div>
-    ),
-    customPaging: i => (
-      <div className={`${i==1?'text-green-500':`${i==2?'text-blue-500':'text-red-500'}`}`}>
-        0{i + 1}
-      </div>
+    appendDots: dots => (<div ><ul style={{ margin: "0px", }}> {dots} </ul></div>),
+    customPaging: i => (<div className={`${i==1?'text-green-500':`${i==2?'text-blue-500':'text-red-500'}`}`}>0{i + 1}</div>
     )
     
   };
