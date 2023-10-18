@@ -2,7 +2,6 @@ import React from 'react'
 
 import Section from '../components/Section'
 import Image from '../components/Image'
-import Facillity from '../components/Facillity'
 import Container from '../components/Container'
 import Flex from '../components/Flex'
 import banner from '../assets/banner.png'
@@ -13,7 +12,9 @@ import "slick-carousel/slick/slick.css";
 import PrevArrows from '../components/PrevArrows'
 import NextArrows from '../components/NextArrows'
 
-import add from '../assets/add.png'
+import ad1 from '../assets/ad1.png'
+import ad2 from '../assets/ad2.png'
+import ad3 from '../assets/ad3.png'
 import add2 from '../assets/add2.png'
 import Product from '../components/Product'
 import product1 from '../assets/product1.png'
@@ -29,8 +30,11 @@ import product10 from '../assets/product10.png'
 import product11 from '../assets/product11.png'
 import product12 from '../assets/product12.png'
 import { Link } from 'react-router-dom'
+import Facility from '../components/Facility'
+
 
 export default function HomePage() {
+
   const settings = {
     infinite: true,
     speed: 500,
@@ -39,22 +43,62 @@ export default function HomePage() {
     prevArrow: <PrevArrows />,
     nextArrow: <NextArrows />
   };
+  const bannerSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows:false,
+    autoplay: true,
+    speed: 1000,
+    
+    appendDots: dots => (
+      <div >
+        <ul style={{ margin: "0px", }}> {dots} </ul>
+      </div>
+    ),
+    customPaging: i => (
+      <div className={`${i==1?'text-green-500':`${i==2?'text-blue-500':'text-red-500'}`}`}>
+        0{i + 1}
+      </div>
+    )
+    
+  };
+  
   return (
     <Section>
-      <Image src={banner}/>
+      <Slider {...bannerSettings}>
+          <div>
+          <Image src={banner} alt={banner}/>
+          </div>
+          <div>
+          <Image src={banner} alt={banner}/>
+          </div>
+          <div>
+          <Image src={banner} alt={banner}/>
+          </div>
+        </Slider>
       <Container>
-      <div className='border-b border-solid border-six py-5 '>
+      <div className='border-b border-t border-solid border-six py-5 mt-8 mb-36'>
         <Flex className='justify-between'>
-        <Facillity/>
-        <Facillity/>
-        <Facillity/>
+             <Facility/>
+             <Facility/>
+             <Facility/>
         </Flex>
-
       </div>
       <Link>
-         <Image src={add} alt="add" className='pt-28 pb-32'/>
+        <div className='flex justify-between'>
+          <div>
+            <Image src={ad1}/>
+          </div>
+          <div className='flex flex-col justify-between'>
+            <div><Image src={ad2}/></div>
+            <div><Image src={ad3}/></div>
+          </div>
+        </div>
       </Link>
-      <SubHeading text="New Arrivals" className='pb-12'/>
+      <SubHeading text="New Arrivals" className='pb-12 pt-32'/>
       <div className='relative pb-28'>
       <Slider {...settings}>
           <div>
@@ -115,9 +159,7 @@ export default function HomePage() {
       <Product heading='Product12' src={product12}/>
         
       </Flex>
-
       </Container>
-      
     </Section>
   )
 }
