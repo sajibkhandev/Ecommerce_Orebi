@@ -12,6 +12,8 @@ import Product from '../components/Product'
 import product1 from '../assets/product1.png'
 import product13 from '../assets/product13.png'
 import { useSelector } from 'react-redux'
+import Image from '../components/Image'
+import Button from '../components/Button'
 export default function AboutPage() {
     let data=useSelector((state)=>(state.breadcrumb.previousName))
 
@@ -26,12 +28,14 @@ export default function AboutPage() {
             <p className='first-letter:uppercase text-xs text-third font-normal font-dm cursor-pointer'>{window.location.pathname.replace("/","")}</p>
             </Flex >
             <Flex className='justify-between mb-32 mt-36'>
-            <div className='w-[780px] h-[780px] '>
-            <Product src={product1}/>
-            </div>
-            <div className='w-[780px] h-[780px] '>
-            <Product src={product13}/>
-            </div>
+                <div className='w-780 relative'><Image src={product1} className='w-full'/>
+                <Button text='Our Brands' className='absolute bottom-[80px] left-1/2 -translate-x-1/2'/>
+                </div>
+                <div className='w-780 relative'><Image src={product13} className='w-full'/>
+                <Button text='Our Stores' className='absolute bottom-[80px] left-1/2 -translate-x-1/2'/>
+                </div>
+               
+            
             </Flex>
             <SubHeading className='font-normal pb-28'  text='Orebi is one of the world’s leading ecommerce brands and is internationally recognized for celebrating the essence of classic Worldwide cool looking style.'/>
              <Flex className='justify-between'>
