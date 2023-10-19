@@ -89,7 +89,7 @@ export default function SearchBer() {
                     <Link onClick={()=>handlebreadcrumbs("Sign Up")} to='/sign-up'>
                          <User />
                     </Link>
-                      <div onClick={handleClick}>
+                      {/* <div onClick={handleClick}> */}
                       <ButtomAngle  />
                       
                       {/* <div ref={signup} className='hidden absolute top-[55px] right-[105px] z-10'>
@@ -98,7 +98,7 @@ export default function SearchBer() {
                           <li className=" text-black py-4 px-14 text-xl font-dm font-bold  border border-black">Log In</li>
                         </ul>
                       </div> */}
-                      </div>
+                      {/* </div> */}
                   </Flex>
                   <div onClick={()=>setOpen(true)}><Cart /></div>{cartData.length}
                 </Flex>
