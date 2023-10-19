@@ -13,18 +13,20 @@ import List from '../List'
 import { useDispatch, useSelector } from 'react-redux'
 import { increment,decrement,remoneButton} from '../../slices/addToCart'
 import {AiOutlineClose} from 'react-icons/ai'
+import Button from '../Button'
 
 export default function SearchBer() {
   let [open,setOpen]=useState(false)
   let [total,setTotal]=useState(0)
   let cartData=useSelector((state)=>(state.cartItem.cart))
   let sajib=useSelector((state)=>(state.cartItem.cartOpen))
+  let signup=useRef(null)
   
   
   let dispatch=useDispatch()
 
   let handlebreadcrumbs=(name)=>{
-    console.log(name);
+    // console.log(name);
     
   }
   let handleIncrement=(item)=>{
@@ -47,6 +49,19 @@ export default function SearchBer() {
     setTotal(total)
     setOpen(sajib)
   },[cartData])
+
+  // let handleClick=(e)=>{
+  //   if(signup.current.style.display=="none"){
+  //     signup.current.style.display="block"
+  //   }else{
+  //     if(!signup.current.contains(e.target)){
+
+  //       signup.current.style.display="none"
+  //     }
+  //   }
+    
+    
+  // }
   return (
     <>
     <Section  className='bg-four py-10'>
@@ -69,12 +84,21 @@ export default function SearchBer() {
                 <div className='w-6/12 '>
                   <Input placeholder="Search Products"/>
                 </div>
-                <Flex className='w-3/12 gap-x-10 justify-end items-center'>
+                <Flex className='w-3/12 gap-x-10 justify-end items-center relative'>
                   <Flex className='gap-x-2.5 items-center'>
                     <Link onClick={()=>handlebreadcrumbs("Sign Up")} to='/sign-up'>
-                         <User/>
+                         <User />
                     </Link>
-                      <ButtomAngle/>
+                      <div onClick={handleClick}>
+                      <ButtomAngle  />
+                      
+                      {/* <div ref={signup} className='hidden absolute top-[55px] right-[105px] z-10'>
+                        <ul className=''>
+                          <li className="bg-black text-white py-4 px-14 text-xl font-dm font-bold">Sign Up</li>
+                          <li className=" text-black py-4 px-14 text-xl font-dm font-bold  border border-black">Log In</li>
+                        </ul>
+                      </div> */}
+                      </div>
                   </Flex>
                   <div onClick={()=>setOpen(true)}><Cart /></div>{cartData.length}
                 </Flex>
