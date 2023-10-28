@@ -5,7 +5,10 @@ import Container from '../components/Container'
 import banner from '../assets/banner.png'
 import Image from '../components/Image'
 import Flex from '../components/Flex'
-import Facility from '../components/Facility'
+import Two from '../components/icons/Two'
+import Car from '../components/icons/Car'
+import Refres from '../components/icons/Refres'
+
 import SubHeading from '../components/SubHeading'
 import { Link } from 'react-router-dom'
 
@@ -76,9 +79,19 @@ export default function HomePage() {
       <Container>
       <div className='border-b border-t border-solid border-six py-5 mt-8 mb-36'>
         <Flex className='justify-between'>
-             <Facility/>
-             <Facility/>
-             <Facility/>
+          <div className='flex gap-x-4 items-center'>
+            <Two className='text-base'/>
+            <p className='text-base text-third font-dm font-normal'>Two years warranty</p>
+          </div>
+          <div className='flex gap-x-4 items-center'>
+            <Car className='text-base'/>
+            <p className='text-base text-third font-dm font-normal'>Free shipping</p>
+          </div>
+          <div className='flex gap-x-4 items-center'>
+            <Refres className='text-base'/>
+            <p className='text-base text-third font-dm font-normal'>Return policy in 30 days</p>
+          </div>
+           
         </Flex>
       </div>
       <Link>
@@ -96,50 +109,50 @@ export default function HomePage() {
       <div className='relative pb-28'>
       <Slider {...settings}>
           <div>
-          <Product heading='Product1' src={product1}/>
+          <Product heading='Product1' src={product1} price="22.00" badge="New"/>
           </div>
           <div>
-          <Product heading='Product2' src={product2}/>
+          <Product heading='Product2' src={product2} price="79.99" badge="10%"/>
           </div>
           <div>
-          <Product heading='Product3' src={product3}/>
+          <Product heading='Product3' src={product3} price="66.00" badge="10%"/>
           </div>
           <div>
-          <Product heading='Product4' src={product4}/>
+          <Product heading='Product4' src={product4} price="44.00" badge="New"/>
           </div>
           <div>
-          <Product heading='Product5' src={product5}/>
+          <Product heading='Product5' src={product5} price="10.00" badge="New"/>
           </div>
           <div>
-          <Product heading='Product6' src={product6}/>
+          <Product heading='Product6' src={product6} price="50.00" badge="New"/>
           </div>
           <div>
-          <Product heading='Product7' src={product7}/>
+          <Product heading='Product7' src={product7} price="49.99" badge="10%"/>
           </div>
           <div>
-          <Product heading='Product8' src={product8}/>
+          <Product heading='Product8' src={product8} price="44.00" badge="New"/>
           </div>
           <div>
-          <Product heading='Product9' src={product9}/>
+          <Product heading='Product9' src={product9} price="55.00" badge="New"/>
           </div>
           <div>
-          <Product heading='Product10' src={product10}/>
+          <Product heading='Product10' src={product10} price="20.00" badge="New"/>
           </div>
           <div>
-          <Product heading='Product11' src={product11}/>
+          <Product heading='Product11' src={product11} price="34.00" badge="10%"/>
           </div>
           <div>
-          <Product heading='Product12' src={product12}/>
+          <Product heading='Product12' src={product12} price="54.00" badge="New"/>
           </div>
         </Slider>
 
       </div> 
       <SubHeading text='Our Bestsellers' className='pb-12'/>
       <Flex className='justify-between'>
-      <Product heading='Product5' src={product5}/>
-      <Product heading='Product6' src={product6}/>
-      <Product heading='Product7' src={product7}/>
-      <Product heading='Product8' src={product8}/>
+      <Product heading='Product5' src={product5} price="10.00" badge="New"/>
+      <Product heading='Product6' src={product6} price="50.00" badge="New"/>
+      <Product heading='Product7' src={product7} price="49.99" badge="10%"/>
+      <Product heading='Product8' src={product8} price="44.00" badge="New"/>
         
       </Flex>
       <Link to='/'>
@@ -147,10 +160,10 @@ export default function HomePage() {
       </Link>
       <SubHeading text='Special Offers' className='pb-12'/>
       <Flex className='justify-between pb-28'>
-      <Product heading='Product9' src={product9}/>
-      <Product heading='Product10' src={product10}/>
-      <Product heading='Product11' src={product11}/>
-      <Product heading='Product12' src={product12}/>
+      <Product heading='Product9' src={product9} price="55.00" badge="New"/>
+      <Product heading='Product10' src={product10} price="20.00" badge="New"/>
+      <Product heading='Product11' src={product11} price="34.00" badge="10%"/>
+      <Product heading='Product12' src={product12} price="54.00" badge="New"/>
         
       </Flex>
       </Container>

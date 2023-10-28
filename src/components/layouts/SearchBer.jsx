@@ -44,8 +44,11 @@ export default function SearchBer() {
   useEffect(()=>{
     let total=0
     cartData.map(item=>{
+     
       total+=item.price*item.quantity
+      
     })
+    
     setTotal(total)
     setOpen(sajib)
   },[cartData])
@@ -123,7 +126,7 @@ export default function SearchBer() {
                   <li>{item.price*item.quantity}$</li>
               </ul>
                 )):<h2 className='text-4xl font-medium h-full flex justify-center my-[300px]'>Cart is Empty</h2>}
-                <h2 className='absolute bottom-0 right-0 p-5 text-3xl'>Total: {total}.00$</h2>
+                <h2 className='absolute bottom-0 right-0 p-5 text-3xl'>Total: {total}$</h2>
                 
               
               </div>}

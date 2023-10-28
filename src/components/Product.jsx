@@ -14,12 +14,13 @@ import { addCart, cartOpen } from '../slices/addToCart'
 
 
 
-export default function Product({src,heading}) {
+export default function Product({src,heading,price,badge}) {
   let dispatch=useDispatch()
   let handleClick=()=>{
     dispatch(addCart({
       title:heading,
-      price:44,
+      price:price,
+      badge:badge,
       image:"nai",
       quantity:1
 
@@ -32,7 +33,7 @@ export default function Product({src,heading}) {
     <div className='mx-2.5'>
         <div className='relative overflow-hidden group'>
         <Image src={src} className='w-full'/>
-        <Badge text='New'/>
+        <Badge text={badge}/>
         <div className='bg-four p-6 absolute left-0 -bottom-40 w-full group-hover:bottom-0 duration-500'>
             <Flex className='justify-end items-center gap-x-4'>
             <p className='text-base text-secondary font-base font-normal hover:text-primary hover:font-bold duration-300 cursor-pointer'>Add to Wish List</p>
@@ -52,7 +53,7 @@ export default function Product({src,heading}) {
         </div>
         <Flex className='justify-between items-center pt-6'>
             <ProtionHeading text={heading}/>
-            <p className='text-secondary text-base font-dm font-normal'>$44.00</p>
+            <p className='text-secondary text-base font-dm font-normal'>{price}</p>
         </Flex>
     </div>
   )
