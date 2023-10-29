@@ -15,7 +15,7 @@ import Pagination from '../components/Pagination'
 
 
 export default function ProductsPage() {
-  let [jibon,setJibon]=useState("")
+  let [page,setPage]=useState(12)
   let data=useSelector((state)=>(state.breadcrumb.previousName))
 
   
@@ -52,8 +52,8 @@ export default function ProductsPage() {
                       </div>
                       <div>
                         <label className='text-base text-secondary font-dm font-normal mr-2' htmlFor="show">Show:</label>
-                        <select onChange={(e)=>setJibon(e.target.value)} className='border border-solid text-base text-secondary font-dm font-normal py-1.5 px-8' name="" id="show">
-                          <option value="8">please select</option>
+                        <select onChange={(e)=>setPage(e.target.value)} className='border border-solid text-base text-secondary font-dm font-normal py-1.5 px-8' name="" id="show">
+                          <option value="">Please select</option>
                           <option value="8">8</option>
                           <option value="12">12</option>
                           <option value="16">16</option>
@@ -63,7 +63,8 @@ export default function ProductsPage() {
                     </div>
                   </div>
                   
-                  <Pagination itemsPerPage={12}/>
+                  
+                  <Pagination itemsPerPage={page==8?8:page==12?12:page==16?16:page==20?20:12}/>
                 </div>
               </Flex>
               </div>
