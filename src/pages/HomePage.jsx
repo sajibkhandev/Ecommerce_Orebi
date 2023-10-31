@@ -112,7 +112,7 @@ export default function HomePage() {
           <Product heading='Product1' src={product1} price="22.00" badge="New"/>
           </div>
           <div>
-          <Product heading='Product2' src={product2} price="79.99" badge="10%"/>
+          <Product heading='Product2' src={product2} price="79.00" badge="10%"/>
           </div>
           <div>
           <Product heading='Product3' src={product3} price="66.00" badge="10%"/>
@@ -127,7 +127,7 @@ export default function HomePage() {
           <Product heading='Product6' src={product6} price="50.00" badge="New"/>
           </div>
           <div>
-          <Product heading='Product7' src={product7} price="49.99" badge="10%"/>
+          <Product heading='Product7' src={product7} price="49.00" badge="10%"/>
           </div>
           <div>
           <Product heading='Product8' src={product8} price="44.00" badge="New"/>
@@ -151,7 +151,7 @@ export default function HomePage() {
       <Flex className='justify-between'>
       <Product heading='Product5' src={product5} price="10.00" badge="New"/>
       <Product heading='Product6' src={product6} price="50.00" badge="New"/>
-      <Product heading='Product7' src={product7} price="49.99" badge="10%"/>
+      <Product heading='Product7' src={product7} price="49.00" badge="10%"/>
       <Product heading='Product8' src={product8} price="44.00" badge="New"/>
         
       </Flex>

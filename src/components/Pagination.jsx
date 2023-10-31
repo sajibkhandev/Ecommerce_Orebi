@@ -26,7 +26,7 @@ const items = [
     {
         name:"Product2",
         src:product2,
-        price:"79.99",
+        price:"79.00",
         badge:"10%"
     },
     {
@@ -56,7 +56,7 @@ const items = [
     {
         name:"Product7",
         src:product7,
-        price:"49.99",
+        price:"49.00",
         badge:"10%"
     },
     {
@@ -116,7 +116,7 @@ const items = [
     {
         name:"Product7",
         src:product7,
-        price:"49.99",
+        price:"49.00",
         badge:"10%"
     },
     {
@@ -151,7 +151,7 @@ const items = [
     {
         name:"Product7",
         src:product7,
-        price:"49.99",
+        price:"49.00",
         badge:"10%"
     },
     {
@@ -192,102 +192,7 @@ const items = [
     {
         name:"Product7",
         src:product7,
-        price:"49.99",
-        badge:"10%"
-    },
-    {
-        name:"Product8",
-        src:product8,
-        price:"44.00",
-        badge:"New"
-    },
-    {
-        name:"Product9",
-        src:product9,
-        price:"55.00",
-        badge:"New"
-    },
-    {
-        name:"Product9",
-        src:product9,
-        price:"55.00",
-        badge:"New"
-    },
-    {
-        name:"Product10",
-        src:product10,
-        price:"20.00",
-        badge:"New"
-    },
-    {
-        name:"Product11",
-        src:product11,
-        price:"34.00",
-        badge:"10%"
-    },
-    {
-        name:"Product11",
-        src:product11,
-        price:"34.00",
-        badge:"10%"
-    },{
-        name:"Product6",
-        src:product6,
-        price:"50.00",
-        badge:"New"
-    },
-    {
-        name:"Product7",
-        src:product7,
-        price:"49.99",
-        badge:"10%"
-    },
-    {
-        name:"Product8",
-        src:product8,
-        price:"44.00",
-        badge:"New"
-    },
-    {
-        name:"Product9",
-        src:product9,
-        price:"55.00",
-        badge:"New"
-    },
-    {
-        name:"Product9",
-        src:product9,
-        price:"55.00",
-        badge:"New"
-    },
-    {
-        name:"Product10",
-        src:product10,
-        price:"20.00",
-        badge:"New"
-    },
-    {
-        name:"Product11",
-        src:product11,
-        price:"34.00",
-        badge:"10%"
-    },
-    {
-        name:"Product11",
-        src:product11,
-        price:"34.00",
-        badge:"10%"
-    },
-    {
-        name:"Product6",
-        src:product6,
-        price:"50.00",
-        badge:"New"
-    },
-    {
-        name:"Product7",
-        src:product7,
-        price:"49.99",
+        price:"49.00",
         badge:"10%"
     },
     {
@@ -332,6 +237,101 @@ const items = [
         badge:"New"
     },
     {
+        name:"Product7",
+        src:product7,
+        price:"49.00",
+        badge:"10%"
+    },
+    {
+        name:"Product8",
+        src:product8,
+        price:"44.00",
+        badge:"New"
+    },
+    {
+        name:"Product9",
+        src:product9,
+        price:"55.00",
+        badge:"New"
+    },
+    {
+        name:"Product9",
+        src:product9,
+        price:"55.00",
+        badge:"New"
+    },
+    {
+        name:"Product10",
+        src:product10,
+        price:"20.00",
+        badge:"New"
+    },
+    {
+        name:"Product11",
+        src:product11,
+        price:"34.00",
+        badge:"10%"
+    },
+    {
+        name:"Product11",
+        src:product11,
+        price:"34.00",
+        badge:"10%"
+    },
+    {
+        name:"Product6",
+        src:product6,
+        price:"50.00",
+        badge:"New"
+    },
+    {
+        name:"Product7",
+        src:product7,
+        price:"49.00",
+        badge:"10%"
+    },
+    {
+        name:"Product8",
+        src:product8,
+        price:"44.00",
+        badge:"New"
+    },
+    {
+        name:"Product9",
+        src:product9,
+        price:"55.00",
+        badge:"New"
+    },
+    {
+        name:"Product9",
+        src:product9,
+        price:"55.00",
+        badge:"New"
+    },
+    {
+        name:"Product10",
+        src:product10,
+        price:"20.00",
+        badge:"New"
+    },
+    {
+        name:"Product11",
+        src:product11,
+        price:"34.00",
+        badge:"10%"
+    },
+    {
+        name:"Product11",
+        src:product11,
+        price:"34.00",
+        badge:"10%"
+    },{
+        name:"Product6",
+        src:product6,
+        price:"50.00",
+        badge:"New"
+    },
+    {
         name:"Product11",
         src:product11,
         price:"34.00",
@@ -345,7 +345,7 @@ const items = [
     {
         name:"Product7",
         src:product7,
-        price:"49.99",
+        price:"49.00",
         badge:"10%"
     },
     {
@@ -399,7 +399,7 @@ const items = [
     {
         name:"Product7",
         src:product7,
-        price:"49.99",
+        price:"49.00",
         badge:"10%"
     },
     {
@@ -441,7 +441,7 @@ const items = [
     {
         name:"Product7",
         src:product7,
-        price:"49.99",
+        price:"49.00",
         badge:"10%"
     },
     {
@@ -483,7 +483,7 @@ const items = [
     {
         name:"Product7",
         src:product7,
-        price:"49.99",
+        price:"49.00",
         badge:"10%"
     },
     {
@@ -525,7 +525,7 @@ const items = [
     {
         name:"Product7",
         src:product7,
-        price:"49.99",
+        price:"49.00",
         badge:"10%"
     },
     {
@@ -567,7 +567,7 @@ const items = [
     {
         name:"Product7",
         src:product7,
-        price:"49.99",
+        price:"49.00",
         badge:"10%"
     },
     {
@@ -621,7 +621,7 @@ const items = [
     {
         name:"Product7",
         src:product7,
-        price:"49.99",
+        price:"49.00",
         badge:"10%"
     },
     {
@@ -663,7 +663,7 @@ const items = [
     {
         name:"Product7",
         src:product7,
-        price:"49.99",
+        price:"49.00",
         badge:"10%"
     },
     {
@@ -705,7 +705,7 @@ const items = [
     {
         name:"Product7",
         src:product7,
-        price:"49.99",
+        price:"49.00",
         badge:"10%"
     },
     {
@@ -747,7 +747,7 @@ const items = [
     {
         name:"Product7",
         src:product7,
-        price:"49.99",
+        price:"49.00",
         badge:"10%"
     },
     {
@@ -783,7 +783,7 @@ const items = [
     {
         name:"Product7",
         src:product7,
-        price:"49.99",
+        price:"49.00",
         badge:"10%"
     },
     {
