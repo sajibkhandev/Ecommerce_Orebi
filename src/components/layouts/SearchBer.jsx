@@ -13,9 +13,12 @@ import List from '../List'
 import { useDispatch, useSelector } from 'react-redux'
 import { increment,decrement,remoneButton} from '../../slices/addToCart'
 import {AiOutlineClose} from 'react-icons/ai'
+import {FaBars} from 'react-icons/fa'
+import {GoTriangleDown} from 'react-icons/go'
 import Button from '../Button'
 
 export default function SearchBer() {
+  let drop1Ref=useRef(null)
   let [open,setOpen]=useState(false)
   let [total,setTotal]=useState(0)
   let cartData=useSelector((state)=>(state.cartItem.cart))
@@ -52,36 +55,50 @@ export default function SearchBer() {
     setTotal(total)
     setOpen(sajib)
   },[cartData])
+  
 
-  // let handleClick=(e)=>{
-  //   if(signup.current.style.display=="none"){
-  //     signup.current.style.display="block"
-  //   }else{
-  //     if(!signup.current.contains(e.target)){
+ 
 
-  //       signup.current.style.display="none"
-  //     }
-  //   }
-    
-    
-  // }
+  let handleSlideBer=(e)=>{
+    if(e.target.classList[0]=="btn"){
+      if(drop1Ref.current.style.display=="block"){
+        drop1Ref.current.style.display="none"
+      }else{
+        drop1Ref.current.style.display="block"
+      }
+
+    }else{
+      if(!drop1Ref.current.contains(e.target)){
+        if(drop1Ref.current.style.display=="block"){
+          drop1Ref.current.style.display="none"
+        }
+      }
+    }
+  }
+  
+
+
+ 
   return (
     <>
-    <Section  className='bg-four py-10'>
+    
+    <div onClick={handleSlideBer}>
+    <Section className='bg-four py-10'>
         <Container>
             <Flex>
-                <Flex className='w-3/12 items-center gap-x-2.5'>
-                  <Bar/>
-                   <div className='relative' >
-                   <ul  className='hidden bg-[#2D2D2D] w-[263px] absolute top-[26px] -left-[28px]'>
-                    <List className='py-4 px-5 hover:text-white' text='Accesories'/>
-                    <List className='py-4 px-5 hover:text-white' text='Furniture'/>
-                    <List className='py-4 px-5 hover:text-white' text='Electronics'/>
-                    <List className='py-4 px-5 hover:text-white' text='Clothes'/>
-                    <List className='py-4 px-5 hover:text-white' text='Bags'/>
-                    <List className='py-4 px-5 hover:text-white' text='Home appliances'/>
+                <Flex className='w-3/12 items-center gap-x-2.5 relative'>
+                  <FaBars className='btn'/>
+                  <div >
+                  <ul ref={drop1Ref} className='hidden bg-[#2D2D2D] w-[263px] z-10 absolute top-[60px] left-0'>
+                    <List className='py-4 px-5 hover:text-white hover:ml-1.5 hover:font-bold' text='Accesories'/>
+                    <List className='py-4 px-5 hover:text-white hover:ml-1.5 hover:font-bold' text='Furniture'/>
+                    <List className='py-4 px-5 hover:text-white hover:ml-1.5 hover:font-bold' text='Electronics'/>
+                    <List className='py-4 px-5 hover:text-white hover:ml-1.5 hover:font-bold' text='Clothes'/>
+                    <List className='py-4 px-5 hover:text-white hover:ml-1.5 hover:font-bold' text='Bags'/>
+                    <List className='py-4 px-5 hover:text-white hover:ml-1.5 hover:font-bold' text='Home appliances'/>
                   </ul>
-                 </div>
+                  </div>
+                  
                   <p className='text-sm text-primary font-dm font-normal'>Shop by Category</p>
                 </Flex>
                 <div className='w-6/12 '>
@@ -90,18 +107,10 @@ export default function SearchBer() {
                 <Flex className='w-3/12 gap-x-10 justify-end items-center relative'>
                   <Flex className='gap-x-2.5 items-center'>
                     <Link onClick={()=>handlebreadcrumbs("Sign Up")} to='/sign-up'>
-                         <User />
+                         <User/>
                     </Link>
-                      {/* <div onClick={handleClick}> */}
-                      <ButtomAngle  />
+                    <GoTriangleDown className='text-xl'/>
                       
-                      {/* <div ref={signup} className='hidden absolute top-[55px] right-[105px] z-10'>
-                        <ul className=''>
-                          <li className="bg-black text-white py-4 px-14 text-xl font-dm font-bold">Sign Up</li>
-                          <li className=" text-black py-4 px-14 text-xl font-dm font-bold  border border-black">Log In</li>
-                        </ul>
-                      </div> */}
-                      {/* </div> */}
                   </Flex>
                   <div onClick={()=>setOpen(true)}><Cart /></div>{cartData.length}
                 </Flex>
@@ -132,6 +141,7 @@ export default function SearchBer() {
               </div>}
         </Container>
     </Section>
+        </div>
     </>
   )
 }
