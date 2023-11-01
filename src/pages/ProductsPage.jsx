@@ -17,11 +17,15 @@ import Pagination from '../components/Pagination'
 export default function ProductsPage() {
   let [page,setPage]=useState(12)
   let data=useSelector((state)=>(state.breadcrumb.previousName))
+  let data1=useSelector((state)=>(state.manegeRef.refValue))
+  let data2=useSelector((state)=>(state.manegeRef.refValue2))
 
   
   
   return (
-    <Section className='py-28'>
+    <div onClick={data1}>
+      <div onClick={data2}>
+      <Section className='py-28'>
         <Container>
         <SubHeading text="Products" className='text-text49'/>
             <Flex className='items-center gap-x-1'>
@@ -71,5 +75,7 @@ export default function ProductsPage() {
             
         </Container>
     </Section>
+      </div>
+    </div>
   )
 }

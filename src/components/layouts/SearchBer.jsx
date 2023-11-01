@@ -13,7 +13,6 @@ import { increment,decrement,remoneButton} from '../../slices/addToCart'
 import {AiOutlineClose} from 'react-icons/ai'
 import {FaBars} from 'react-icons/fa'
 import {GoTriangleDown} from 'react-icons/go'
-import Button from '../Button'
 import { refMenagment,refMenagment2 } from '../../slices/refCondition'
 
 export default function SearchBer() {
@@ -102,12 +101,15 @@ export default function SearchBer() {
                   <FaBars className='btn'/>
                   <div >
                   <ul ref={drop1Ref} className='hidden bg-[#2D2D2D] w-[263px] z-10 absolute top-[60px] left-0'>
+                    <Link to='/product'>
                     <List className='py-4 px-5 hover:text-white hover:ml-1.5 hover:font-bold' text='Accesories'/>
                     <List className='py-4 px-5 hover:text-white hover:ml-1.5 hover:font-bold' text='Furniture'/>
                     <List className='py-4 px-5 hover:text-white hover:ml-1.5 hover:font-bold' text='Electronics'/>
                     <List className='py-4 px-5 hover:text-white hover:ml-1.5 hover:font-bold' text='Clothes'/>
                     <List className='py-4 px-5 hover:text-white hover:ml-1.5 hover:font-bold' text='Bags'/>
                     <List className='py-4 px-5 hover:text-white hover:ml-1.5 hover:font-bold' text='Home appliances'/>
+                    </Link>
+                    
                   </ul>
                   </div>
                   
@@ -121,16 +123,14 @@ export default function SearchBer() {
                <Flex className='gap-x-2.5 items-center '>
                          <User/>
                     <GoTriangleDown className='btn2 text-xl'/>
-                    <div ref={drop2Ref} className='hidden border border-solid border-black w-[200px] absolute top-[50px] right-[110px] z-30'>
+                    <div ref={drop2Ref} className='hidden border border-solid border-black w-[200px] absolute top-[50px] right-[65px] z-30'>
                      <Link to='/sign-up'>
                       <button className='w-full bg-black text-white py-4 px-14 text-sm font-dm font-bold'>Sign Up</button>
-                     
                      </Link>
                       <Link to='/login'>
                         <button className='w-full bg-white text-black py-4 px-14 text-sm font-dm font-bold'>Log In</button>
                       </Link>
                     </div>
-                      
                   </Flex>
                
                   <div className='relative ' onClick={()=>setOpen(true)}><Cart /></div>
@@ -141,9 +141,9 @@ export default function SearchBer() {
             </Flex>
             
             {open &&
-             <div className='bg-primary text-white h-screen w-2/6 absolute top-0 right-0 z-10'>
-              <div onClick={()=>setOpen(false)}><button className=' m-2 p-2 bg-black text-white border-white border border-solid text-white' onClick={()=>handleRemove(item)}><AiOutlineClose className='text-xl'/></button></div>
-              <ul className='flex justify-between pt-7 px-2 py-5 text-lg font-semibold text-center'>
+             <div className='bg-four text-black border-solid border h-screen w-2/6 absolute top-0 right-0 z-10'>
+              <div onClick={()=>setOpen(false)}><button className=' m-4 p-1 text-black border-black border border-solid ' onClick={()=>handleRemove(item)}><AiOutlineClose className='text-xl'/></button></div>
+              <ul className='flex justify-between pt-7 px-4 py-5 text-lg font-semibold text-center'>
                 <li>Action:</li>
                 <li>Product:</li>
                 <li>Price:</li>
@@ -151,15 +151,25 @@ export default function SearchBer() {
                 <li>Subtotal:</li>
               </ul>
               {cartData.length>0?cartData.map(item=>(
-              <ul className='flex justify-between px-2 text-base font-medium py-5 border-b border-solid border-white'>
-                  <li><button className='p-2 bg-black text-white border-white border border-solid text-white' onClick={()=>handleRemove(item)}><AiOutlineClose className='text-xl'/></button></li>
-                  <li>{item.title} </li>
-                  <li>{item.price}</li>
-                  <li className='border border-solid border-white px-4 py-1'><button onClick={()=>handleDecrement(item)} className='mr-2 text-xl'>-</button >{item.quantity}<button onClick={()=>handleIncrement(item)} className='ml-2 text-lg'>+</button></li>
-                  <li>{item.price*item.quantity}$</li>
+              <ul className='flex justify-between px-4 text-base font-medium py-5 border-b border-solid border-black'>
+                  <li><button className='p-1 text-black border-black border border-solid ' onClick={()=>handleRemove(item)}><AiOutlineClose className='text-lg'/></button></li>
+                  <li >{item.title.substring(0, 10)}</li>
+                  <li>{item.price}$</li>
+                  <li className='border border-solid border-black px-4 py-1'><button onClick={()=>handleDecrement(item)} className='mr-2 text-xl'>-</button >{item.quantity}<button onClick={()=>handleIncrement(item)} className='ml-2 text-lg'>+</button></li>
+                  <li>{item.price*item.quantity}.00$</li>
               </ul>
-                )):<h2 className='text-4xl font-medium h-full flex justify-center my-[300px]'>Cart is Empty</h2>}
-                <h2 className='absolute bottom-0 right-0 p-5 text-3xl'>Total: {total}$</h2>
+              
+                ))
+                :<h2 className='text-4xl font-medium h-full flex justify-center my-[300px]'>Cart is Empty</h2>}
+                <Flex className='gap-x-5  justify-center py-14'>
+                <Link to='/cart'>
+                <button className='w-full bg-white text-black py-4 px-14 text-sm font-dm font-bold border border-solid border-primary'>View Cart</button>
+                </Link>
+                <Link to='/checkout'>
+                <button className='w-full bg-black text-white py-4 px-14 text-sm font-dm font-bold'>Checkout</button>
+                </Link>
+                </Flex>
+                <h2 className='absolute bottom-3 right-0 p-5 text-3xl font-semibold '>Total: <span className='font-bold font-dm'>{total}.00</span> $</h2>
                 
               
               </div>}

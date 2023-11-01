@@ -24,6 +24,7 @@ export default {
         four:'#F5F5F3',
         five:'#979797',
         six:'#D8D8D8',
+        
       },
       fontSize: {
         text39: '39px',

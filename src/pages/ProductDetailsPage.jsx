@@ -13,8 +13,11 @@ import SubHeading from '../components/SubHeading'
 import {AiOutlineStar,AiFillStar,AiOutlinePlus} from 'react-icons/ai'
 import {BsFillCircleFill,BsFillStarFill} from 'react-icons/bs'
 import Button from '../components/Button'
+import { useSelector } from 'react-redux'
 
 export default function ProductDetailsPage() {
+  let data1=useSelector((state)=>(state.manegeRef.refValue))
+  let data2=useSelector((state)=>(state.manegeRef.refValue2))
   let [feature,setFeature]=useState(false)
   let [shopping,setShopping]=useState(false)
   let [star1,setStar1]=useState(true)
@@ -34,6 +37,8 @@ export default function ProductDetailsPage() {
   }
   
   return (
+   <div onClick={data1}>
+    <div onClick={data2}>
     <Section className=' py-32'>
         <Container>
         <SubHeading text="Product" className='text-text49'/>
@@ -184,5 +189,7 @@ export default function ProductDetailsPage() {
            
         </Container>
     </Section>
+    </div>
+   </div>
   )
 }
