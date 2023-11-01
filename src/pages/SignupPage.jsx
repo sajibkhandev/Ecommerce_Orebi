@@ -11,8 +11,12 @@ import Button from '../components/Button'
 
 export default function SignupPage() {
     let data=useSelector((state)=>(state.breadcrumb.currentName))
+    let data3=useSelector((state)=>(state.manegeRef.refValue))
+    let data2=useSelector((state)=>(state.manegeRef.refValue2))
   return (
-    <Section className='py-32'>
+    <div onClick={data3}>
+      <div onClick={data2}>
+      <Section className='py-32'>
         <Container>
             <SubHeading text='Sign up' className='text-text49'/>
             <Flex className='items-center gap-x-1'>
@@ -126,5 +130,7 @@ export default function SignupPage() {
             
         </Container>
     </Section>
+      </div>
+    </div>
   )
 }

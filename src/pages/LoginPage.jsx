@@ -7,10 +7,16 @@ import { Link } from 'react-router-dom'
 import { FaAngleRight } from 'react-icons/fa'
 import Input2 from '../components/Input2'
 import Button from '../components/Button'
+import { useSelector } from 'react-redux'
 
 export default function LoginPage() {
+  let data=useSelector((state)=>(state.manegeRef.refValue))
+  let data2=useSelector((state)=>(state.manegeRef.refValue2))
+  
   return (
-    <Section className='pt-32 pb-36'>
+    <div onClick={data}>
+      <div onClick={data2}>
+      <Section className='pt-32 pb-36'>
         <Container>
             <SubHeading text="Login" className='text-text49'/>
             <Flex className='items-center gap-x-1'>
@@ -43,5 +49,7 @@ export default function LoginPage() {
             <Button text='Continue'/>
         </Container>
     </Section>
+      </div>
+    </div>
   )
 }

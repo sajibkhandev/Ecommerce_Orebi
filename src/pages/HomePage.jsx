@@ -34,10 +34,13 @@ import product9 from '../assets/product9.png'
 import product10 from '../assets/product10.png'
 import product11 from '../assets/product11.png'
 import product12 from '../assets/product12.png'
+import { useSelector } from 'react-redux'
 
 
 
 export default function HomePage() {
+  let data=useSelector((state)=>(state.manegeRef.refValue))
+    let data2=useSelector((state)=>(state.manegeRef.refValue2))
 
   const settings = {
     infinite: true,
@@ -64,7 +67,9 @@ export default function HomePage() {
   };
   
   return (
-    <Section>
+    <div onClick={data}>
+      <div onClick={data2}>
+      <Section>
       <Slider {...bannerSettings}>
           <div>
           <Image src={banner} alt={banner}/>
@@ -168,5 +173,7 @@ export default function HomePage() {
       </Flex>
       </Container>
     </Section>
+    </div>
+    </div>
   )
 }

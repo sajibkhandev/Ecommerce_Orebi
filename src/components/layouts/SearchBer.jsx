@@ -2,11 +2,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import Section from '../Section'
 import Container from '../Container'
 import Flex from '../Flex'
-import Bar from '../icons/Bar'
 
 import Input from '../Input'
 import User from '../icons/User'
-import ButtomAngle from '../icons/ButtomAngle'
 import Cart from '../icons/Cart'
 import { Link } from 'react-router-dom'
 import List from '../List'
@@ -16,22 +14,18 @@ import {AiOutlineClose} from 'react-icons/ai'
 import {FaBars} from 'react-icons/fa'
 import {GoTriangleDown} from 'react-icons/go'
 import Button from '../Button'
+import { refMenagment,refMenagment2 } from '../../slices/refCondition'
 
 export default function SearchBer() {
   let drop1Ref=useRef(null)
+  let drop2Ref=useRef(null)
   let [open,setOpen]=useState(false)
   let [total,setTotal]=useState(0)
   let cartData=useSelector((state)=>(state.cartItem.cart))
   let sajib=useSelector((state)=>(state.cartItem.cartOpen))
-  let signup=useRef(null)
-  
-  
+
   let dispatch=useDispatch()
 
-  let handlebreadcrumbs=(name)=>{
-    // console.log(name);
-    
-  }
   let handleIncrement=(item)=>{
     dispatch(increment(item))
     
@@ -75,14 +69,32 @@ export default function SearchBer() {
       }
     }
   }
+  dispatch(refMenagment(handleSlideBer))
   
+  
+  let handleSlideBer2=(e)=>{
+    if(e.target.classList[0]=="btn2"){
+      if(drop2Ref.current.style.display=="block"){
+        drop2Ref.current.style.display="none"
+      }else{
+        drop2Ref.current.style.display="block"
+      }
 
+    }else{
+      if(!drop2Ref.current.contains(e.target)){
+        if(drop2Ref.current.style.display=="block"){
+          drop2Ref.current.style.display="none"
+        }
+      }
+    }
 
- 
+  }
+  dispatch(refMenagment2(handleSlideBer2))
   return (
     <>
     
     <div onClick={handleSlideBer}>
+      <div onClick={handleSlideBer2}>
     <Section className='bg-four py-10'>
         <Container>
             <Flex>
@@ -105,13 +117,21 @@ export default function SearchBer() {
                   <Input placeholder="Search Products"/>
                 </div>
                 <Flex className='w-3/12 gap-x-10 justify-end items-center relative'>
-                  <Flex className='gap-x-2.5 items-center'>
-                    <Link onClick={()=>handlebreadcrumbs("Sign Up")} to='/sign-up'>
+               
+               <Flex className='gap-x-2.5 items-center '>
                          <User/>
-                    </Link>
-                    <GoTriangleDown className='text-xl'/>
+                    <GoTriangleDown className='btn2 text-xl'/>
+                    <div ref={drop2Ref} className='hidden border border-solid border-black w-[200px] bg-white absolute top-[50px] right-[110px] z-30'>
+                     <Link to='/sign-up'>
+                     <Button text='Sign Up' className='w-full border-0 bg-black text-white hover:bg-[#000000] hover:text-white'/>
+                     </Link>
+                      <Link to='/login'>
+                      <Button text='Log In' className='w-full bg-white text-black border-0'/>
+                      </Link>
+                    </div>
                       
                   </Flex>
+               
                   <div onClick={()=>setOpen(true)}><Cart /></div>{cartData.length}
                 </Flex>
             </Flex>
@@ -141,6 +161,7 @@ export default function SearchBer() {
               </div>}
         </Container>
     </Section>
+    </div>
         </div>
     </>
   )

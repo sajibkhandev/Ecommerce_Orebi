@@ -5,10 +5,12 @@ import Image from '../Image'
 import logo from '../../assets/logo.png'
 import List from '../List'
 import { Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { pages } from '../../slices/breadCrumbs'
 
 export default function Navber() {
+    let data=useSelector((state)=>(state.manegeRef.refValue))
+    let data2=useSelector((state)=>(state.manegeRef.refValue2))
     let dispatch=useDispatch()
     let handlebreadcrumbs=(name)=>{
         dispatch(pages(name))
@@ -16,7 +18,9 @@ export default function Navber() {
     }
   return (
     <>
-    <nav className='py-8'>
+   
+   <div onClick={data2}>
+   <nav onClick={data} className='py-8'>
         <Container>
             <Flex>
                 <div className='w-1/4'>
@@ -42,6 +46,8 @@ export default function Navber() {
             </Flex>
         </Container>
     </nav>
+   </div>
+    
     </>
   )
 }
