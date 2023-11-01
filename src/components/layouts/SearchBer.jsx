@@ -121,18 +121,21 @@ export default function SearchBer() {
                <Flex className='gap-x-2.5 items-center '>
                          <User/>
                     <GoTriangleDown className='btn2 text-xl'/>
-                    <div ref={drop2Ref} className='hidden border border-solid border-black w-[200px] bg-white absolute top-[50px] right-[110px] z-30'>
+                    <div ref={drop2Ref} className='hidden border border-solid border-black w-[200px] absolute top-[50px] right-[110px] z-30'>
                      <Link to='/sign-up'>
-                     <Button text='Sign Up' className='w-full border-0 bg-black text-white hover:bg-[#000000] hover:text-white'/>
+                     <Button text='Sign Up' className='w-full border-0  text-white hover:bg-[#000] hover:text-white'/>
                      </Link>
                       <Link to='/login'>
-                      <Button text='Log In' className='w-full bg-white text-black border-0'/>
+                      <Button text='Log In' className='w-full bg-white text-[#000000] border-0'/>
                       </Link>
                     </div>
                       
                   </Flex>
                
-                  <div onClick={()=>setOpen(true)}><Cart /></div>{cartData.length}
+                  <div className='relative ' onClick={()=>setOpen(true)}><Cart /></div>
+                  <div className='absolute top-[4px] -right-[20px] w-[22px] h-[22px] bg-yellow-500 rounded-full text-center leading-[22px] text-white'>
+                  {cartData.length}
+                  </div>
                 </Flex>
             </Flex>
             
