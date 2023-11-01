@@ -64,6 +64,7 @@ export const addToCart = createSlice({
     }, 
     cartOpen:(state,action)=>{
       state.cartOpen=action.payload
+      console.log(action.payload);
       // console.log(state.cartOpen);
   },
   },

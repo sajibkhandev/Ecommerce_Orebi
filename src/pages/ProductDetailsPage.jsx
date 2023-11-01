@@ -119,7 +119,9 @@ export default function ProductDetailsPage() {
             
             <Flex className='w-780 gap-x-5  border-b border-solid border-six items-center gap-x-7 pb-8'>
             <Button text="Add to Wish List"/>
+            <Link to='/cart'>
             <Button text="Add to Cart"/>
+            </Link>
             </Flex>
 
             <div className='w-780 border-b border-solid border-six py-8'>
@@ -184,7 +186,7 @@ export default function ProductDetailsPage() {
               </form>
               
             </div>
-            {/* Review Add part emd */}
+            {/* Review Add part emn */}
 
            
         </Container>
