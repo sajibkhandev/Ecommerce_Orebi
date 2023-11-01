@@ -123,10 +123,11 @@ export default function SearchBer() {
                     <GoTriangleDown className='btn2 text-xl'/>
                     <div ref={drop2Ref} className='hidden border border-solid border-black w-[200px] absolute top-[50px] right-[110px] z-30'>
                      <Link to='/sign-up'>
-                     <Button text='Sign Up' className='w-full border-0  text-white hover:bg-[#000] hover:text-white'/>
+                      <button className='w-full bg-black text-white py-4 px-14 text-sm font-dm font-bold'>Sign Up</button>
+                     
                      </Link>
                       <Link to='/login'>
-                      <Button text='Log In' className='w-full bg-white text-[#000000] border-0'/>
+                        <button className='w-full bg-white text-black py-4 px-14 text-sm font-dm font-bold'>Log In</button>
                       </Link>
                     </div>
                       
