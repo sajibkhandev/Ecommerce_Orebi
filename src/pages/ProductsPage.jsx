@@ -7,14 +7,19 @@ import { Link } from 'react-router-dom'
 import { FaAngleRight } from 'react-icons/fa'
 
 import { useSelector } from 'react-redux'
-import Image from '../components/Image'
-import body from '../assets/BODY.png'
 import paginationIcon1 from '../assets/paginationIcon1.png'
 import paginationIcon2 from '../assets/paginationIcon2.png'
 import Pagination from '../components/Pagination'
+import {GoTriangleDown} from 'react-icons/go'
 
 
 export default function ProductsPage() {
+  let [category1,setCategory1]=useState(false)
+  let [smartphones,setSmartphones]=useState(false)
+  let [desktops,setDesktops]=useState(false)
+  let [watchs,setWatchs]=useState(false)
+  let [tablets,setTablets]=useState(false)
+  let [loptops,setLoptops]=useState(false)
   let [page,setPage]=useState(12)
   let data=useSelector((state)=>(state.breadcrumb.previousName))
   let data1=useSelector((state)=>(state.manegeRef.refValue))
@@ -36,9 +41,107 @@ export default function ProductsPage() {
 
             </Flex>
             
-              <div className='py-20'>
+              <div className='py-28'>
               <Flex className=''>
-                <div className='w-3/12 '>sdf</div>
+                {/* Part One */}
+                <div className='w-3/12 '>
+                  <h4 className='text-primary text-xl font-dm font-bold pb-8'>Shop by Category</h4>
+                  <div className='pr-8 text-secondary text-base font-dm font-normal '>
+                    <div className='flex items-center justify-between border-solid border-b border-four'><li className=' py-5 list-none'>Category 1</li><span onClick={()=>setCategory1(!category1)} className='text-xl cursor-pointer'>{`${category1?"-":"+"}`}</span></div>
+                    {category1&& 
+                    <div className='pl-10'>
+                      <div className='flex items-center justify-between border-solid border-b border-four'><li className='text-red-500 py-5 list-none'>Smartphones</li><span onClick={()=>setSmartphones(!smartphones)} className='text-xl cursor-pointer'>{`${smartphones?"-":"+"}`}</span></div>
+                      {smartphones&&
+                      <div className='pl-10 '>
+                      <li className=' py-1 text-purple-500'>Realme</li>
+                      <li className=' py-1 text-purple-500'>iPhone</li>
+                      <li className=' py-1 text-purple-500'>Vivo</li>
+                      <li className=' py-1 text-purple-500'>Samsung</li>
+                      <li className=' py-1 text-purple-500'>Xiaomi</li>
+                    </div>}
+
+                      
+                      <div className='flex items-center justify-between border-solid border-b border-four'><li className='text-red-500 py-5 list-none'>Desktops</li><span onClick={()=>setDesktops(!desktops)} className='text-xl cursor-pointer'>{`${desktops?"-":"+"}`}</span></div>
+                       {desktops&&
+                      <div className='pl-10 '>
+                      <li className=' py-1 text-purple-500'>Realme</li>
+                      <li className=' py-1 text-purple-500'>iPhone</li>
+                      <li className=' py-1 text-purple-500'>Vivo</li>
+                      <li className=' py-1 text-purple-500'>Samsung</li>
+                      <li className=' py-1 text-purple-500'>Xiaomi</li>
+                    </div>}
+                      <div className='flex items-center justify-between border-solid border-b border-four'><li className='text-red-500 py-5 list-none'>Watchs</li><span onClick={()=>setWatchs(!watchs)} className='text-xl cursor-pointer'>{`${watchs?"-":"+"}`}</span></div>
+                       {watchs&&
+                      <div className='pl-10 '>
+                      <li className=' py-1 text-purple-500'>Realme</li>
+                      <li className=' py-1 text-purple-500'>iPhone</li>
+                      <li className=' py-1 text-purple-500'>Vivo</li>
+                      <li className=' py-1 text-purple-500'>Samsung</li>
+                      <li className=' py-1 text-purple-500'>Xiaomi</li>
+                    </div>}
+                      <div className='flex items-center justify-between border-solid border-b border-four'><li className='text-red-500 py-5 list-none'>Tablets</li><span onClick={()=>setTablets(!tablets)} className='text-xl cursor-pointer'>{`${tablets?"-":"+"}`}</span></div>
+                       {tablets&&
+                      <div className='pl-10 '>
+                      <li className=' py-1 text-purple-500'>Realme</li>
+                      <li className=' py-1 text-purple-500'>iPhone</li>
+                      <li className=' py-1 text-purple-500'>Vivo</li>
+                      <li className=' py-1 text-purple-500'>Samsung</li>
+                      <li className=' py-1 text-purple-500'>Xiaomi</li>
+                    </div>}
+                      <div className='flex items-center justify-between border-solid border-b border-four'><li className='text-red-500 py-5 list-none'>Loptops</li><span onClick={()=>setLoptops(!loptops)} className='text-xl cursor-pointer'>{`${loptops?"-":"+"}`}</span></div>
+                       {loptops&&
+                      <div className='pl-10 '>
+                      <li className=' py-1 text-purple-500'>Realme</li>
+                      <li className=' py-1 text-purple-500'>iPhone</li>
+                      <li className=' py-1 text-purple-500'>Vivo</li>
+                      <li className=' py-1 text-purple-500'>Samsung</li>
+                      <li className=' py-1 text-purple-500'>Xiaomi</li>
+                    </div>}
+                      </div>}
+                    <li className='border-solid border-b border-four py-5 list-none'>Category 2</li>
+                    <div className='flex items-center justify-between border-solid border-b border-four'><li className=' py-5 list-none'>Category 3</li><span className='text-xl'>+</span></div>
+                    <li className='border-solid border-b border-four py-5 list-none'>Category 4</li>
+                    <li className='border-solid border-b border-four py-5 list-none'>Category 5</li>
+                  </div>
+                  {/*  */}
+                  <div className='flex pt-14 pb-4 items-center justify-between pr-8'>
+                  <h4 className='text-primary text-xl font-dm font-bold'>Shop by Color</h4>
+                  <span className='text-lg '><GoTriangleDown/></span>
+                  </div>
+                  <div className='pr-8 text-secondary text-base font-dm font-normal '>
+                    <li className='border-solid border-b border-four py-5 list-none'>Color 1</li>
+                    <li className='border-solid border-b border-four py-5 list-none'>Color 2</li>
+                    <li className='border-solid border-b border-four py-5 list-none'>Color 3</li>
+                    <li className='border-solid border-b border-four py-5 list-none'>Color 4</li>
+                    <li className='border-solid border-b border-four py-5 list-none'>Color 5</li>
+                  </div>
+                  {/*  */}
+                  <div className='flex pt-14 pb-4 items-center justify-between pr-8 '>
+                  <h4 className='text-primary text-xl font-dm font-bold'>Shop by Brand</h4>
+                  <span className='text-lg '><GoTriangleDown/></span>
+                  </div>
+                  <div className='pr-8 text-secondary text-base font-dm font-normal '>
+                    <li className='border-solid border-b border-four py-5 list-none'>Brand 1</li>
+                    <li className='border-solid border-b border-four py-5 list-none'>Brand 2</li>
+                    <li className='border-solid border-b border-four py-5 list-none'>Brand 3</li>
+                    <li className='border-solid border-b border-four py-5 list-none'>Brand 4</li>
+                    <li className='border-solid border-b border-four py-5 list-none'>Brand 5</li>
+                  </div>
+                  {/*  */}
+                  <div className='flex pt-14 pb-4 items-center justify-between pr-8 '>
+                  <h4 className='text-primary text-xl font-dm font-bold'>Shop by Price</h4>
+                  <span className='text-lg '><GoTriangleDown/></span>
+                  </div>
+                  <div className='pr-8 text-secondary text-base font-dm font-normal '>
+                    <li className='border-solid border-b border-four py-5 list-none'>$0.00 - $9.99</li>
+                    <li className='border-solid border-b border-four py-5 list-none'>$10.00 - $19.99</li>
+                    <li className='border-solid border-b border-four py-5 list-none'>$20.00 - $29.99</li>
+                    <li className='border-solid border-b border-four py-5 list-none'>$30.00 - $39.99</li>
+                    <li className='border-solid border-b border-four py-5 list-none'>$40.00 - $69.99</li>
+                  </div>
+
+                </div>
+                {/* Part One */}
                 <div className='w-9/12'>
                   <div className='flex justify-between pb-16 mx-2.5'>
                     <div className='flex gap-x-3 '>
